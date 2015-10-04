@@ -1,6 +1,6 @@
 addEventListener('load',function(){
 
-    engine = new Engine();
+    var engine = new Engine();
 
     engine.initCanvas();
 

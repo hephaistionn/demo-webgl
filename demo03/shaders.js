@@ -36,7 +36,7 @@ Engine.prototype.initShaders = function() {
         +'    float dotProduct = dot( normal, normalize(uLightingDirection) );  '
         +'    float pointDiffuseWeight = max( dotProduct, 0.0 );  '
          +'   vec3 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t)).xyz;'
-        +'    gl_FragColor =  vec4(0.1)+vec4(textureColor * uDirectionalColor * pointDiffuseWeight, 1.0) ;   '
+        +'    gl_FragColor =  vec4(textureColor * uDirectionalColor * pointDiffuseWeight, 1.0) ;   '
         +'  }  ';
 
 

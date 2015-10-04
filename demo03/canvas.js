@@ -7,7 +7,7 @@ Engine.prototype.initCanvas = function() {
   canvas.height = 512;
   document.body.appendChild(canvas);
 
-  gl = canvas.getContext("webgl");
+  var gl = canvas.getContext("webgl");
 
   this.gl = gl;
 };
