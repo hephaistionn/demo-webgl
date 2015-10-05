@@ -24,14 +24,13 @@ Engine.prototype.initShaders = function() {
     var pixelShader = ''
         +'  precision mediump float;  '
         +'  uniform vec3 uLightingDirection;  '
-        +'  uniform vec3 uDirectionalColor;  '
+        +'  uniform vec3 uLightColor;  '
         +'  varying vec4 vNormal;  '
         +'  void main(void) {  '
         +'    vec3 normal = normalize(vNormal.xyz);  '
         +'    float dotProduct = dot( normal, normalize(uLightingDirection) );  '
         +'    float pointDiffuseWeight = max( dotProduct, 0.0 );  '
-        //+'    gl_FragColor =  vec4(normal, 1.0) ;   '
-        +'    gl_FragColor =  vec4(uDirectionalColor * pointDiffuseWeight, 1.0) ;   '
+        +'    gl_FragColor =  vec4(uLightColor * pointDiffuseWeight, 1.0) ;   '
         +'  }  ';
 
 
@@ -76,7 +75,7 @@ Engine.prototype.initShaders = function() {
     shader.setUniformVMatrix = gl.getUniformLocation( program, "modelMatrix" );
     shader.setUniformPMatrix = gl.getUniformLocation( program, "projectionMatrix" );
     shader.setUniformLightDirection = gl.getUniformLocation(program, "uLightingDirection");
-    shader.setUniformLightColor = gl.getUniformLocation(program, "uDirectionalColor");
+    shader.setUniformLightColor = gl.getUniformLocation(program, "uLightColor");
 
     this.shader = shader;
 
