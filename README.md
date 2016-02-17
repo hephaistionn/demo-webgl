@@ -7,7 +7,7 @@ How make an 3D scene with webgl ?
  * demo03 :  mesh with lighting and texture
  * 
  
-# An webgl app that i made
+# A project made with WebGL
 
 [zombie-legion.com](http://zombie-legion.com/)
 
